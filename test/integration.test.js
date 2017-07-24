@@ -11,6 +11,7 @@ test('plugin works', async t => {
   const files = [
     {
       contents: 'ello',
+      path: 'blah.html',
       metadata: {
         layout: 'layout'
       }
@@ -22,5 +23,5 @@ test('plugin works', async t => {
     return site
   }, files)
 
-  t.is(res.files[0].contents, 'hello')
+  t.is(res.files[0].contents.trim(), 'hello')
 })
