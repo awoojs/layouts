@@ -1,6 +1,6 @@
 repository:
-  name: plugin-template
-  description: ':closed_book: template for weh plugins'
+  name: layouts
+  description: ':page_facing_up: reusable html templates for weh'
   private: false
   has_issues: true
   has_projects: false

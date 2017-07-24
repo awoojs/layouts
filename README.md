@@ -21,23 +21,23 @@ You can delete this code block once you've modified the template!
 ```
 
 <h1 align="center">
-  weh-your-plugin
+  layouts
 </h1>
 
 <p align="center">
-  a short description of what your plugin does
+  reusable html layouts for weh
 </p>
 
 <p align="center">
   <!-- code coverage -->
-  <a href="https://codecov.io/gh/YOURREPO"><img src="https://img.shields.io/codecov/c/github/YOURREPO.svg?style=flat-square"
+  <a href="https://codecov.io/gh/wehjs/layouts"><img src="https://img.shields.io/codecov/c/github/wehjs/layouts.svg?style=flat-square"
   alt="code coverage"></a>
   <!-- travis ci -->
-  <a href="https://travis-ci.org/wehjs/matter"><img src="https://img.shields.io/travis/YOURREPO.svg?style=flat-square"
+  <a href="https://travis-ci.org/wehjs/layouts"><img src="https://img.shields.io/travis/wehjs/layouts.svg?style=flat-square"
   alt="test status"></a>
   <!-- npm version -->
-  <a href="https://npmjs.org/package/YOURNPMNAME">
-    <img src="https://img.shields.io/npm/v/YOURNPMNAME.svg?style=flat-square"
+  <a href="https://npmjs.org/package/@weh/layouts">
+    <img src="https://img.shields.io/npm/v/@weh/layouts.svg?style=flat-square"
       alt="npm version" />
   </a>
   <!-- code style -->
@@ -53,21 +53,26 @@ You can delete this code block once you've modified the template!
 ## Installation
 
 ```sh
-npm install weh-your-plugin
+# you will need frontmatter support:
+npm install @weh/matter
+npm install @weh/layouts
 ```
 
 ## Usage example
 
 ```js
 const weh = require('@weh/weh')
-const plugin = require('weh-your-plugin')
+const matter = require('@weh/matter')
+const plugin = require('@weh/layouts')
 
 // enter our main function:
 // the main function should be an async function so that
 // it automatically returns a promise
 weh(async site => {
-  // we register our plugin...
-  site.use(plugin)
+  // first we need frontmatter support
+  site.use(matter)
+  // and now we can initialize layouts
+  site.use(layouts)
   // ...and initiate the build process
   return site
 })
@@ -98,7 +103,7 @@ There are a couple of npm scripts provided for convenience:
 
 ## Maintainers
 
-- Your Name <[yourname@example.org](mailto:yourname@example.org)>
+- Olivia Hugger <[olivia@fastmail.com](mailto:olivia@fastmail.com)>
 
 ## Code of Conduct
 

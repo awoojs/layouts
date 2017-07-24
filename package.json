@@ -1,7 +1,7 @@
 {
-  "name": "weh-your-plugin",
+  "name": "@weh/layouts",
   "version": "1.0.0",
-  "description": "a nice short description of your plugin",
+  "description": "reusable html layouts for weh",
   "main": "lib/plugin.js",
   "scripts": {
     "lint": "standard | snazzy",
@@ -18,17 +18,17 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wehjs/plugin-template.git"
+    "url": "git+https://github.com/wehjs/layouts.git"
   },
   "keywords": [
     "weh"
   ],
-  "author": "Your Name <yourname@example.org>",
+  "author": "Olivia Hugger <olivia@fastmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wehjs/plugin-template/issues"
+    "url": "https://github.com/wehjs/layouts/issues"
   },
-  "homepage": "https://github.com/wehjs/plugin-template#readme",
+  "homepage": "https://github.com/wehjs/layouts#readme",
   "devDependencies": {
     "@weh/weh": "2.2.2",
     "ava": "0.20.0",
