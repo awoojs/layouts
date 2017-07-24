@@ -107,8 +107,8 @@ weh(async site => {
 To work on this repository, clone it and install the npm dependencies:
 
 ```sh
-git clone https://github.com/YOURREPO
-cd YOURREPO
+git clone https://github.com/wehjs/layouts
+cd layouts
 npm install
 ```
 
