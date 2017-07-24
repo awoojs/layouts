@@ -1,5 +1,5 @@
 <h1 align="center">
-  layouts
+  @weh/layouts
 </h1>
 
 <p align="center">
@@ -25,8 +25,9 @@
 
 ## Features
 
-- It does things!
-- And also, it does other stuff that you might be interested in
+- Powerful templating system
+- Templates are just JavaScript functions!
+- Ability to perform templating on a subset of files
 
 ## Installation
 
@@ -43,6 +44,16 @@ const weh = require('@weh/weh')
 const matter = require('@weh/matter')
 const plugin = require('@weh/layouts')
 
+// a layout is just a js function that returns a string of
+// html! it takes the current file and also the total set
+// of files
+const layout = (file, files) =>
+`
+<h1>
+  ${file.contents}
+</h1>
+`
+
 // enter our main function:
 // the main function should be an async function so that
 // it automatically returns a promise
@@ -50,13 +61,44 @@ weh(async site => {
   // first we need frontmatter support
   site.use(matter)
   // and now we can initialize layouts
-  site.use(layouts)
+  // (the `layouts` options key takes an object of layouts)
+  site.use(layouts, { layouts: { layout } })
   // ...and initiate the build process
   return site
 })
 ```
 
-<!-- additional documentation about your plugin goes here -->
+## Filters
+
+By default, `layouts` only operates on HTML files (files that end with `.html`).
+This can be changed easily by using a custom filter. A filter is a function that
+takes a file and returns a boolean that describes whether that file should have
+`layouts` enabled or not. A custom filter can look like this:
+
+```js
+function myCustomFilter (file, options, files) {
+  return file.path.endsWith('.md')
+}
+```
+
+This filter only matches for Markdown files. If you wanted to match on multiple file
+extensions at the same time, you could do something like this:
+
+```js
+function myOtherCustomFilter (file, options, files) {
+  return ['md', 'html'].some(e => file.path.split('.').pop() === e)
+}
+```
+
+To use the filter, just pass it into the plugin options:
+
+```js
+weh(async site => {
+  site.use(matter)
+  site.use(layouts, {layouts: {...}, filter: myCustomFilter})
+  return site
+})
+```
 
 ## Development
 
