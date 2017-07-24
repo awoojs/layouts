@@ -85,8 +85,10 @@ This filter only matches for Markdown files. If you wanted to match on multiple 
 extensions at the same time, you could do something like this:
 
 ```js
+const fileExtension = file => file.path.split('.').pop()
+
 function myOtherCustomFilter (file, options, files) {
-  return ['md', 'html'].some(e => file.path.split('.').pop() === e)
+  return ['md', 'html'].some(e => fileExtension(file) === e)
 }
 ```
 
