@@ -1,25 +1,3 @@
-```
-This is a sample template for weh plugins. To get started with your own plugin,
-run the following commands:
-
-$ git clone https://github.com/wehjs/plugin-template weh-your-plugin
-$ cd weh-your-plugin
-$ npm install
-
-Here's some files you might be interested in adjusting:
-README.md
-LICENSE
-package.json
-lib/plugin.js
-.github/config.yml (for use with probot config)
-
-To enable Travis support, go to http://travis-ci.org and enable your GitHub plugin
-repository. The next time you push, a build should automatically get started.
-To enable codecov support, do the same, but with http://codecov.io.
-
-You can delete this code block once you've modified the template!
-```
-
 <h1 align="center">
   layouts
 </h1>
