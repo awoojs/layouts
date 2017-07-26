@@ -25,6 +25,8 @@
 
 ## Features
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/wehjs/layouts.svg)](https://greenkeeper.io/)
+
 - Powerful templating system
 - Templates are just JavaScript functions!
 - Ability to perform templating on a subset of files
